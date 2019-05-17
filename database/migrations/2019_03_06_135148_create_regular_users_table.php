@@ -13,14 +13,19 @@ class CreateRegularUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('regular_users', function (Blueprint $table) {
+        Schema::create('admins', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
             $table->string('organization');
+            // $table->integer('organization_id')->unsigned()->index();
+            // $table->foreign('organization_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->integer('is_active')->default(0);
+            //  $table->integer('user_id')->unsigned()->index();
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->rememberToken();
+            // $table->integer('is_active')->default(0);
             $table->timestamps();
         });
     }
@@ -32,6 +37,9 @@ class CreateRegularUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('regular_users');
+        Schema::dropIfExists('admins');
+        // $table->dropForeign('regular_users_user_id_foreign');
+        // $table->dropIndex('regular_users_user_id_index');
+        // $table->dropColumn('user_id');
     }
 }

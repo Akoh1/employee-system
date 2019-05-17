@@ -12,7 +12,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
@@ -20,6 +20,72 @@
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="last_name" class="col-md-4 col-form-label text-md-right">{{ __('Last Name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="last_name" type="text" class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" name="last_name" value="{{ old('last_name') }}" required autofocus>
+
+                                @if ($errors->has('last_name'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('last_name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="dob" class="col-md-4 col-form-label text-md-right">{{ __('D.O.B') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="dob" type="date" class="form-control{{ $errors->has('dob') ? ' is-invalid' : '' }}" name="dob" value="{{ old('dob') }}" required autofocus>
+
+                                @if ($errors->has('dob'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('dob') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="sex" class="col-md-4 col-form-label text-md-right">{{ __('Sex') }}</label>
+
+                            <div class="col-md-6">
+
+                                <select name="sex">
+                                  <option value="Male" >Male</option>
+                                  <option value="Female" >Female</option>
+                                </select>
+
+                                @if ($errors->has('sex'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('sex') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="maritial_status" class="col-md-4 col-form-label text-md-right">{{ __('Marital Status') }}</label>
+
+                            <div class="col-md-6">
+
+                                <select name="maritial_status">
+                                  <option value="single" >Single</option>
+                                  <option value="married" >Married</option>
+                                  <option value="engaged" >Engaged</option>
+                                  <option value="divorced" >Divorced</option>
+                                </select>
+
+                                @if ($errors->has('maritial_status'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('maritial_status') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -42,15 +108,19 @@
                          <div class="form-group row">
                             <label for="organization" class="col-md-4 col-form-label text-md-right">Organization</label>
                             <div class="col-md-6">
-                                <input id="organization" type="organization" class="form-control" name="organization" value="" required>
-<!-- 
-                                @if ($errors->has('email'))
+                              <select name="organization_id">
+                               @foreach($organization as $idOrg => $org)
+                                 <option  value="{{ $idOrg }}">{{ $org }}</option>
+                               @endforeach
+                             </select>
+
+                                @if ($errors->has('organization_id'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('organization_id') }}</strong>
                                     </span>
-                                @endif -->
+                                @endif
                             </div>
-                    
+
                         </div>
 
                         <div class="form-group row">

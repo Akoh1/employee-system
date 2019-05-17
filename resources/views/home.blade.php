@@ -14,7 +14,16 @@
                         </div>
                     @endif
 
-                    Welcome to the admin page
+                    Welcome to the User page
+                    @component('components.who')
+
+                    @endcomponent
+
+                    @if (Auth::user()->is_active == 1)
+                      <p>You are active</p>
+                    @else
+                      <p>You are not active</p>
+                    @endif
                 </div>
             </div>
         </div>

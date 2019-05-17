@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -40,6 +41,8 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -48,9 +51,19 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+      $organization_id = Admin::all()->pluck('organization', 'id');
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
+            'dob' => ['required', 'date'],
+            'sex' => ['required', 'string', 'max:255'],
+            'maritial_status' => ['required', 'string'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'organization_id' => 'required',
+            // 'is_active' => 'integer',
+            // 'date_joined',
+            // 'position' => ['string', 'max:255'],
+            // 'annual_salary' => ['string', 'max:255'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
     }
@@ -63,10 +76,19 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+      $organization_id = Admin::all()->pluck('organization', 'id');
         return User::create([
             'name' => $data['name'],
+            'last_name' => $data['last_name'],
+            'dob' => $data['dob'],
+            'sex' => $data['sex'],
+            'maritial_status' => $data['maritial_status'],
             'email' => $data['email'],
-            'organization' => $data['organization'],
+            'organization_id' => $data['organization_id'],
+            // 'is_active' => $data['is_active'],
+            // 'date_joined' => $data['date_joined'],
+            // 'position' => $data['position'],
+            // 'annual_salary' => $data['annual_salary'],
             'password' => Hash::make($data['password']),
         ]);
     }
