@@ -75,6 +75,31 @@ class HomeController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+        'name'=>'string|max:255',
+        'last_name'=> 'string|max:255',
+        'dob' => 'date',
+        'maritial_status' => 'string|max:255',
+        // 'email' => 'string|email|max:255|unique:users',
+        'is_active' => 'integer',
+        'date_joined' => ['date'],
+        'position' => ['string', 'max:255'],
+        'annual_salary' => ['string', 'max:255'],
+      ]);
+
+      $user = User::find($id);
+      $user->name = $request->get('name');
+      $user->last_name = $request->get('last_name');
+      $user->dob = $request->get('dob');
+      $user->maritial_status = $request->get('maritial_status');
+      // $user->email = $request->get('email');
+      $user->is_active = $request->get('is_active');
+      $user->date_joined = $request->get('date_joined');
+      $user->position = $request->get('position');
+      $user->annual_salary = $request->get('annual_salary');
+      $user->save();
+
+      return redirect(route('admins.index'))->with('success', 'Employee data has been updated');
     }
 
     /**

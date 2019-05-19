@@ -29,8 +29,20 @@
         </div>
         <div class="form-group">
           <label for="quantity">Email:</label>
-          <input type="text" class="form-control" name="email" value={{ $user->email }} />
+          <input type="text" class="form-control" name="email" value={{ $user->email }} disabled />
         </div>
+
+        <div class="form-group">
+          <label for="quantity">Sex:</label>
+
+            @if ($user->sex == 'Male')
+              <p>Male</p>
+            @elseif ($user->sex == 'Female')
+              <p>Female</p>
+            @endif
+
+        </div>
+
         <div class="form-group">
           <label for="quantity">Active:</label>
           <select name="is_active">
@@ -40,7 +52,50 @@
               <option value="0">Dectivate</option>
             @endif
           </select>
-          
+
+        </div>
+
+        <div class="form-group">
+          <label for="quantity">DOB:</label>
+          <input type="date" class="form-control" name="dob" value={{ $user->dob }} />
+        </div>
+
+        <div class="form-group">
+          <label for="quantity">Marital Status:</label>
+          <select name="maritial_status">
+            @if ($user->maritial_status == 'single')
+              <option value="married">Married</option>
+              <option value="engaged">Engaged</option>
+              <option value="divorced">Divorced</option>
+            @elseif ($user->maritial_status == 'married')
+              <option value="single">Single</option>
+              <option value="engaged">Engaged</option>
+              <option value="divorced">Divorced</option>
+            @elseif ($user->maritial_status == 'engaged')
+              <option value="single">Single</option>
+              <option value="married">Married</option>
+              <option value="divorced">Divorced</option>
+            @elseif ($user->maritial_status == 'divorced')
+              <option value="single">Single</option>
+              <option value="married">Married</option>
+              <option value="engaged">Engaged</option>
+            @endif
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="quantity">Date Joined:</label>
+          <input type="date" class="form-control" name="date_joined" value={{ $user->date_joined }} />
+        </div>
+
+        <div class="form-group">
+          <label for="quantity">Position:</label>
+          <input type="text" class="form-control" name="position" value={{ $user->position}} />
+        </div>
+
+        <div class="form-group">
+          <label for="quantity">Annual Salary:</label>
+          <input type="text" class="form-control" name="annual_salary" value={{ $user->annual_salary }} />
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
       </form>
