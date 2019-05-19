@@ -22,7 +22,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/user/form', 'HomeController@create')->name('user.form');
-Route::get('/regular', 'RegUserController@index')->name('regular.dashboard');
+// Route::get('/regular', 'RegUserController@index')->name('regular.dashboard');
 
 
 

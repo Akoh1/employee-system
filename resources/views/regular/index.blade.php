@@ -30,21 +30,52 @@
                     @component('components.who')
 
                     @endcomponent
-
+                    {{-- {{$admin}} --}}
+                    {{-- {{ $admins }} --}}
                     <table class="table">
                       <thead>
                         <tr>
                           <th>Name</th>
                           <th>Last Name</th>
+                          <th>email</th>
+                          <th>Date of birth</th>
+                          <th>sex</th>
+                          <th>Marital Status</th>
+                          <th>Date Joined</th>
+                          <th>Position</th>
+                          <th>Annual Salary</th>
+                          <th>Is Active</th>
+                          <th></th>
+                          <th></th>
                         </tr>
                       </thead>
+                      {{-- @foreach ($admin as $id => $admin)
 
-                      <tbody>
+                      @endforeach
+                      <tbody> --}}
                         @foreach ($test as $key => $value)
-                          <tr>
-                            <td>{{$value->name}}</td>
-                            <td>{{$value->last_name}}</td>
-                          </tr>
+                          @if ($value->organization_id == $admins)
+                            <tr>
+                              <td>{{$value->name}}</td>
+                              <td>{{$value->last_name}}</td>
+                              <td>{{$value->email}}</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td>
+                                <a href="{{ route('admins.edit',$value->id)}}"  type="button" class="btn btn-info">Edit</a>
+                              </td>
+                              <td>
+                                <a type="button" class="btn btn-danger">Delete</a>
+                              </td>
+                            </tr>
+
+                          @endif
+
                         @endforeach
                       </tbody>
                     </table>
