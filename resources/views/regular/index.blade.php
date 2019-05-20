@@ -59,13 +59,20 @@
                               <td>{{$value->name}}</td>
                               <td>{{$value->last_name}}</td>
                               <td>{{$value->email}}</td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
+                              <td>{{$value->dob}}</td>
+                              <td>{{$value->sex}}</td>
+                              <td>{{$value->maritial_status}}</td>
+                              <td>{{$value->date_joined}}</td>
+                              <td>{{$value->position}}</td>
+                              <td>{{$value->annual_salary}}</td>
+                              <td>
+                                @if ($value->is_active == 0)
+                                  <p>Not Active</p>
+                                @else
+                                  <p>Active</p>
+                                @endif
+                                
+                              </td>
                               <td>
                                 <a href="{{ route('admins.edit',$value->id)}}"  type="button" class="btn btn-info">Edit</a>
                               </td>

@@ -28,7 +28,7 @@ class RedirectIfAuthenticated
         default:
           // code...
           if(Auth::guard($guard)->check()) {
-              return redirect(route('home'));
+              return redirect(route('home.index'));
           }
           break;
       }

@@ -20,12 +20,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/user/form', 'HomeController@create')->name('user.form');
+// Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/user/form', 'HomeController@create')->name('user.form');
+// Route::get('/user/edit/{$id}', 'HomeController@edit')->name('user.edit');
+// Route::get('/user/update', 'HomeController@update')->name('user.update');
+
 // Route::get('/regular', 'RegUserController@index')->name('regular.dashboard');
 
 
-
+Route::resource('home','HomeController');
 
 Route::resource('admins','Admin\HomeController');
 
