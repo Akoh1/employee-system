@@ -71,13 +71,18 @@
                                 @else
                                   <p>Active</p>
                                 @endif
-                                
+
                               </td>
                               <td>
                                 <a href="{{ route('admins.edit',$value->id)}}"  type="button" class="btn btn-info">Edit</a>
                               </td>
                               <td>
-                                <a type="button" class="btn btn-danger">Delete</a>
+
+                                <form action="{{ route('admins.destroy', $value->id)}}" method="post">
+                                  @csrf
+                                  @method('DELETE')
+                                  <button class="btn btn-danger" type="submit">Delete</button>
+                                </form>
                               </td>
                             </tr>
 

@@ -60,11 +60,12 @@ class RegisterController extends Controller
             'maritial_status' => ['required', 'string'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'organization_id' => 'required',
+
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
             // 'is_active' => 'integer',
             // 'date_joined',
             // 'position' => ['string', 'max:255'],
             // 'annual_salary' => ['string', 'max:255'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
     }
 

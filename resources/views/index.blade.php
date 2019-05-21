@@ -50,7 +50,7 @@
 		</span>
 	</div>
 	<!-- Steps -->
-	<div class="steps landing__section">
+	{{-- <div class="steps landing__section">
 		<div class="container">
 			<h2>Who can use Evie?</h2>
 			<p>Here's who we can think of, but surely creative people will surprise us.</p>
@@ -80,9 +80,9 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 	<!-- Expanded sections -->
-	<div class="expanded landing__section">
+	{{-- <div class="expanded landing__section">
 		<div class="container">
 			<div class="expanded__inner">
 				<div class="expanded__media">
@@ -94,8 +94,8 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="expanded landing__section">
+	</div> --}}
+	{{-- <div class="expanded landing__section">
 		<div class="container">
 			<div class="expanded__inner">
 				<div class="expanded__media">
@@ -107,8 +107,8 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="expanded landing__section">
+	</div> --}}
+	{{-- <div class="expanded landing__section">
 		<div class="container">
 			<div class="expanded__inner">
 				<div class="expanded__media">
@@ -120,9 +120,9 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 	<!-- Call To Action -->
-	<div class="cta cta--reverse">
+	{{-- <div class="cta cta--reverse">
 		<div class="container">
 			<div class="cta__inner">
 				<h2 class="cta__title">Get started now</h2>
@@ -130,7 +130,7 @@
 				<a href="#" class="button button__accent">Download Evie</a>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 	<!-- Footer -->
 	<div class="footer footer--dark">
 		<div class="container">
