@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Admin;
 use App\User;
 use Auth;
+use App\Events\ChatMessage;
 
 class HomeController extends Controller
 {
@@ -14,10 +15,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Show the application dashboard.
@@ -28,8 +29,22 @@ class HomeController extends Controller
     {
       // $test = User::all();
       $user = Auth::user();
-        return view('home', compact('user'));
+      $users = User::all();
+        return view('home', compact('user', 'users'));
     }
+
+    public function sendMessage(Request $request)
+    {
+        $message = [
+            "id" => $request->userid,
+            "sourceuserid" => Auth::user()->id,
+            "name" => Auth::user()->name,
+            "message" => $request->message
+        ];
+        event(new ChatMessage($message));
+        return "true";
+    }
+
     public function create()
     {
         //

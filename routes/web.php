@@ -26,11 +26,15 @@ Auth::routes();
 // Route::get('/user/update', 'HomeController@update')->name('user.update');
 
 // Route::get('/regular', 'RegUserController@index')->name('regular.dashboard');
-
+Route::get('/message', 'MessageController@index')->name('message');
+Route::post('/message', 'MessageController@store')->name('message.store');
 
 Route::resource('home','HomeController');
 
 Route::resource('admins','Admin\HomeController');
+
+Route::post('/chat','ChatController@sendMessage');
+Route::get('/chat','ChatController@chatPage');
 
 
 
