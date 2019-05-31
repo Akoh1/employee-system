@@ -130,7 +130,7 @@
                       <br><br>
                       <a href="{{ route('home.edit', $user->id)}}" type="button" class="btn btn-success">Update Record</a>
                       <br><br>
-                    <a href="{{ url('chat') }}">Chat</a>
+                    {{-- <a href="{{ url('chat') }}">Chat</a> --}}
                       {{-- <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-md-8">

@@ -33,8 +33,7 @@ Route::resource('home','HomeController');
 
 Route::resource('admins','Admin\HomeController');
 
-Route::post('/chat','ChatController@sendMessage');
-Route::get('/chat','ChatController@chatPage');
+
 
 
 
