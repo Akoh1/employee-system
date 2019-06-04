@@ -48,8 +48,10 @@
           <select name="is_active">
             @if ($user->is_active == 0)
               <option value="1">Activate</option>
+              <option value="0">Deactivate</option>
             @elseif ($user->is_active == 1)
               <option value="0">Dectivate</option>
+              <option value="1">Activate</option>
             @endif
           </select>
 
@@ -64,18 +66,22 @@
           <label for="quantity">Marital Status:</label>
           <select name="maritial_status">
             @if ($user->maritial_status == 'single')
+              <option value="single">Single</option>
               <option value="married">Married</option>
               <option value="engaged">Engaged</option>
               <option value="divorced">Divorced</option>
             @elseif ($user->maritial_status == 'married')
+              <option value="married">Married</option>
               <option value="single">Single</option>
               <option value="engaged">Engaged</option>
               <option value="divorced">Divorced</option>
             @elseif ($user->maritial_status == 'engaged')
+              <option value="engaged">Engaged</option>
               <option value="single">Single</option>
               <option value="married">Married</option>
               <option value="divorced">Divorced</option>
             @elseif ($user->maritial_status == 'divorced')
+              <option value="divorced">Divorced</option>
               <option value="single">Single</option>
               <option value="married">Married</option>
               <option value="engaged">Engaged</option>

@@ -26,15 +26,14 @@ Auth::routes();
 // Route::get('/user/update', 'HomeController@update')->name('user.update');
 
 // Route::get('/regular', 'RegUserController@index')->name('regular.dashboard');
-Route::get('/message', 'MessageController@index')->name('message');
-Route::post('/message', 'MessageController@store')->name('message.store');
+
 
 Route::resource('home','HomeController');
 
 Route::resource('admins','Admin\HomeController');
 
-
-
+Route::get('/contacts', 'ContactsController@get');
+Route::get('/conversation/{id}', 'ContactsController@getMessagesFor');
 
 
 Route::prefix('admin')->group(function() {
