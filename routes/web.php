@@ -34,6 +34,7 @@ Route::resource('admins','Admin\HomeController');
 
 Route::get('/contacts', 'ContactsController@get');
 Route::get('/conversation/{id}', 'ContactsController@getMessagesFor');
+Route::post('/conversation/send', 'ContactsController@send');
 
 
 Route::prefix('admin')->group(function() {
@@ -43,5 +44,5 @@ Route::prefix('admin')->group(function() {
 
 });
 
-
+// Broadcast::routes(['middleware' => ['auth:api']]);
 Auth::routes(['verify' => true]);

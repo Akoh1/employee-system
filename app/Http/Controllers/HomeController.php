@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Admin;
 use App\User;
 use Auth;
-use App\Events\ChatMessage;
+
 
 class HomeController extends Controller
 {
@@ -33,17 +33,6 @@ class HomeController extends Controller
         return view('home', compact('user', 'users'));
     }
 
-    public function sendMessage(Request $request)
-    {
-        $message = [
-            "id" => $request->userid,
-            "sourceuserid" => Auth::user()->id,
-            "name" => Auth::user()->name,
-            "message" => $request->message
-        ];
-        event(new ChatMessage($message));
-        return "true";
-    }
 
     public function create()
     {
