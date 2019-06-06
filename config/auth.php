@@ -111,10 +111,10 @@ return [
             'expire' => 60,
         ],
 
-        'regular_users' => [
-            'provider' => 'regular_users',
+        'regularuser' => [
+            'provider' => 'admins',
             'table' => 'password_resets',
-            'expire' => 60,
+            'expire' => 30,
         ],
 
     ]

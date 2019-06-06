@@ -15,7 +15,10 @@ class ContactsController extends Controller
     public function get()
     {
         // get all users except the authenticated ones
-        $contacts = User::where('organization_id', Auth::user()->organization_id)->where('is_active', 1)->where('id', '!=',auth()->id())->get();
+        $contacts = User::where('organization_id', Auth::user()->organization_id)
+            ->where('is_active', 1)
+            ->where('id', '!=',auth()->id())
+            ->get();
 
         $unreadIds = Message::select(\DB::raw('`from` as sender_id, count(`from`) as messages_count'))
                 ->where('to', auth()->id())

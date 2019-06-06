@@ -1,6 +1,6 @@
 # employee-system
 
-A web app to manage employee record in an organization
+A web app to manage employee record in an organization, organizations can open a workspace on this platofrm and potential employess can sign up to the workspace by filling in the necessary credentials, Real time chat with other employess within your organization.
 
 
 
