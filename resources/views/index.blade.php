@@ -6,6 +6,7 @@
 	<title>Employee Management System</title>
 	<!-- Don't forget to add your metadata here -->
 	<link rel='stylesheet' href="{{ asset('css/style.min.css') }}" />
+	<link href="css/style.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<!-- Hero(extended) navbar -->
