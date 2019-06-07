@@ -24,9 +24,7 @@ class HomeController extends Controller
 
     public function create()
     {
-        //
-
-        return view('regular.regularform', compact('organization'));
+        return view('regular.regularform');
     }
 
     // protected function validator(array $data)
