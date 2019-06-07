@@ -27,9 +27,9 @@
                     @endif
 
                     Welcome to the Admin page
-                    @component('components.who')
+                    {{-- @component('components.who')
 
-                    @endcomponent
+                    @endcomponent --}}
                     {{-- {{$admin}} --}}
                     {{-- {{ $admins }} --}}
                     <table class="table">

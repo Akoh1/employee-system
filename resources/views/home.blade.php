@@ -15,10 +15,10 @@
                         </div>
                     @endif
 
-                    Welcome to the User page
+                    {{-- Welcome to the User page
                     @component('components.who')
 
-                    @endcomponent
+                    @endcomponent --}}
 
 
                       <div class="container" style="border: 1px solid green">
@@ -142,7 +142,7 @@
           <div class="card-header">Chat</div>
         <div class="card-body" id="app">
         <chat-app :user="{{auth()->user()}}"></chat-app>
-        </div>  
+        </div>
       </div>
     </div>
 </div>
