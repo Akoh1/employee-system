@@ -18,7 +18,7 @@ class HomeController extends Controller
     public function index(){
       $test = User::all();
 
-      $admins = Auth::guard('regularuser')->user()->id;
+      $admins = Auth::guard('regularuser')->id;
         return view('regular.index', compact('test', 'admins'));
     }
 
